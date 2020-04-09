@@ -47,6 +47,6 @@ redirect to '/articles'
   delete '/articles/:id/delete' do
     @article = Article.find(params["id"])
     @article.destroy
-    erb :delete
+    redirect to '/articles'
   end
 end
