@@ -40,10 +40,10 @@ redirect to '/articles'
   
     id = params["id"]
     new_params = {}
-    old_article = Article.find(id)
-    new_params[:name] = params["name"]
+    @old_article = Article.find(id)
+    new_params[:title] = params["title"]
     new_params[:content] = params["content"]
-    old_article.update(new_params)
+    @old_article.update(params[:])
   binding.pry
     redirect "/articles/#{id}"
   end
