@@ -37,15 +37,10 @@ redirect to '/articles'
   end
 
   patch '/articles/:id' do
-  
-    id = params["id"]
-    new_params = {}
     @old_article = Article.find(id)
-    new_params[:title] = params["title"]
-    new_params[:content] = params["content"]
-    @old_article.update(params[:])
+    @old_article.update(params[:article])
   binding.pry
-    redirect "/articles/#{id}"
+    redirect "/articles/#{@old_article.id}"
   end
 
   delete '/articles/:id/delete' do
