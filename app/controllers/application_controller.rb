@@ -44,7 +44,7 @@ redirect to '/articles'
     redirect "/articles/#{@old_article.id}"
   end
 
-  delete '/articles/:id/delete' do
+  delete '/articles/:id' do
     # @article = Article.find(params["id"])
     Article.destroy(params[:id])
     redirect to '/articles'
