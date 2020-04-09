@@ -37,9 +37,10 @@ redirect to '/articles'
   end
 
   patch '/articles/:id' do
-    @old_article = Article.find(id)
+    @old_article = Article.find(params[:id])
+    
     @old_article.update(params[:article])
-   binding.pry
+ 
     redirect "/articles/#{@old_article.id}"
   end
 
